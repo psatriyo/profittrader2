@@ -36,7 +36,7 @@ function updateCountdown() {
 
         const countdownTitle = document.querySelector('.countdown-title');
         if (countdownTitle) {
-            countdownTitle.textContent = 'Pelatihan Telah Dimulai!';
+            countdownTitle.textContent = '🎉 PELATIHAN DIMULAI SEKARANG! Selamat datang di transformasi portfolio Anda!';
         }
     }
 }
@@ -109,21 +109,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Basic validation
             if (!formData.name || !formData.email || !formData.phone) {
-                alert('Mohon isi semua field yang diperlukan!');
+                alert('⚠️ Oops! Mohon isi SEMUA field yang ada:\n- Nama Lengkap\n- Email\n- Nomor WhatsApp\n\nJangan sampai ketinggalan akses eksklusif Anda!');
                 return;
             }
 
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(formData.email)) {
-                alert('Mohon masukkan alamat email yang valid!');
+                alert('❌ Email tidak valid!\n\nMohon masukkan email yang benar (cth: nama@email.com)\n\nEmail ini digunakan untuk mengirimkan akses e-book dan materi eksklusif!');
                 return;
             }
 
             // Phone validation (basic Indonesian phone number)
             const phoneRegex = /^(\+62|62|0)[0-9]{9,12}$/;
             if (!phoneRegex.test(formData.phone.replace(/\s/g, ''))) {
-                alert('Mohon masukkan nomor WhatsApp yang valid!');
+                alert('📱 Nomor WhatsApp tidak valid!\n\nGunakan format:\n- 08xxx (Indonesia)\n- +62xxx\n- 62xxx\n\nNomor ini untuk reminder dan update eksklusif!');
                 return;
             }
 
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Form submitted:', formData);
 
             // Show success message
-            alert('Terima kasih! Pendaftaran Anda berhasil. Kami akan mengirimkan informasi lebih lanjut melalui email dan WhatsApp.');
+            alert('🎉 SELAMAT! Pendaftaran Anda BERHASIL!\n\n✅ Akses eksklusif telah aktif\n✅ E-book akan dikirim ke email Anda\n✅ Reminder pelatihan akan dikirim via WhatsApp\n\n👉 Tandai kalender: 27-31 Oktober 2025, Pukul 20.00 WIB\n\nTerima kasih telah memilih untuk mentransformasi portfolio Anda bersama Rio Rizaldi!\n\n🚀 Mari kita tingkatkan profit portfolio Anda!');
 
             // Reset form
             registrationForm.reset();
@@ -239,6 +239,9 @@ function formatWhatsAppLink(phoneNumber) {
 // Console Welcome Message
 // ================================
 
-console.log('%c🎯 Portfolio Makeover Challenge 2025', 'color: #2ea3f2; font-size: 20px; font-weight: bold;');
-console.log('%cDaftar sekarang untuk mengikuti pelatihan 5 hari gratis!', 'color: #7be054; font-size: 14px;');
-console.log('%c27-31 Oktober 2025 | 20:00-21:00 WIB', 'color: #2d2d2d; font-size: 12px;');
+console.log('%c🎯 PORTFOLIO MAKEOVER CHALLENGE 2025 - RIO RIZALDI', 'color: #ff6b35; font-size: 18px; font-weight: bold;');
+console.log('%c✨ Transformasi Portfolio Anda dari MERAH Jadi UNTUNG MAKSIMAL!', 'color: #7be054; font-size: 14px; font-weight: bold;');
+console.log('%c📅 27-31 Oktober 2025 | Pukul 20:00-21:00 WIB SETIAP HARI', 'color: #2ea3f2; font-size: 12px;');
+console.log('%c🎁 BONUS: E-Book Eksklusif + Akses PTM 14 Hari GRATIS!', 'color: #ffd60a; font-size: 12px; font-weight: bold;');
+console.log('%c💰 HARGA: 100% GRATIS TOTAL (Rp0)', 'color: #06d6a0; font-size: 13px; font-weight: bold;');
+console.log('%c👉 Daftar sekarang: Scroll ke bawah dan isi form registrasi', 'color: #2d2d2d; font-size: 11px;');
