@@ -3,473 +3,654 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Makeover Challenge | 5 Hari Yang Akan Merubah Cara Anda Membangun Portfolio</title>
-    <meta name="description" content="Merubah Portfolio saham anda menjadi kemenangan di tahun 2025. Bersama dengan Rio Rizaldi, Anda akan belajar langkah-demi-langkah untuk membangun portfolio saham Anda">
+    <title>Profit Trader | Smart Trading untuk Investor Modern</title>
+    <meta name="description" content="Profit Trader - Aplikasi trading pintar yang membantu Anda membuat keputusan investasi yang lebih baik dengan analisis teknikal yang powerful dan mudah dipahami.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Top Navigation Bar -->
-    <nav class="top-nav">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
         <div class="container">
-            <div class="nav-content">
-                <h2 class="nav-title">🚀 Transformasi Portfolio Anda Dalam 5 Hari - GRATIS!</h2>
-                <a href="#register" class="btn btn-nav">DAFTAR SEKARANG</a>
+            <a href="#" class="logo">
+                <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="currentColor"/>
+                    <path d="M8 20L13 15L17 19L24 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 12H24V16" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Profit Trader</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Fitur</a>
+                <a href="#how-it-works">Cara Kerja</a>
+                <a href="#screenshots">Preview</a>
+                <a href="#download" class="btn btn-primary btn-sm">Download Gratis</a>
             </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#features">Fitur</a>
+        <a href="#how-it-works">Cara Kerja</a>
+        <a href="#screenshots">Preview</a>
+        <a href="#download" class="btn btn-primary">Download Gratis</a>
+    </div>
+
     <!-- Hero Section -->
-    <section id="hero" class="hero">
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-left">
-                    <div class="hero-badge">🎯 PELATIHAN 5 HARI 100% GRATIS</div>
-                    <h1 class="hero-title">Ubah Portfolio Anda<br>Dari Merah Jadi UNTUNG MAKSIMAL</h1>
-                    <p class="hero-subtitle">27 - 31 Oktober 2025 | 20.00 - 21.00 WIB</p>
-
-                    <!-- Countdown Timer -->
-                    <div class="countdown-section">
-                        <h3 class="countdown-title">Pelatihan Akan Dimulai Dalam:</h3>
-                        <div id="countdown" class="countdown">
-                            <div class="countdown-item">
-                                <span class="countdown-value" id="days">00</span>
-                                <span class="countdown-label">Hari</span>
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        Versi 2.0 Tersedia Sekarang
+                    </div>
+                    <h1 class="hero-title">
+                        Trading Lebih Cerdas,
+                        <span class="gradient-text">Profit Lebih Konsisten</span>
+                    </h1>
+                    <p class="hero-description">
+                        Profit Trader membantu Anda menganalisis pasar dengan presisi tinggi.
+                        Indikator powerful, sinyal akurat, dan interface yang intuitif —
+                        semua dalam satu aplikasi.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#download" class="btn btn-primary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7,10 12,15 17,10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Download Sekarang
+                        </a>
+                        <a href="#how-it-works" class="btn btn-outline btn-lg">
+                            Lihat Demo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polygon points="10,8 16,12 10,16"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-value">50K+</span>
+                            <span class="stat-label">Active Users</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-value">4.8</span>
+                            <span class="stat-label">App Rating</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-value">15+</span>
+                            <span class="stat-label">Tahun Riset</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <div class="app-preview">
+                                    <div class="app-header">
+                                        <span class="app-title">BBCA</span>
+                                        <span class="app-price positive">Rp 9,850 <small>+2.4%</small></span>
+                                    </div>
+                                    <div class="chart-container">
+                                        <svg class="chart-line" viewBox="0 0 300 150" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:var(--primary);stop-opacity:0.3"/>
+                                                    <stop offset="100%" style="stop-color:var(--primary);stop-opacity:0"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <path class="chart-area" d="M0,120 Q30,100 60,90 T120,70 T180,50 T240,60 T300,30 L300,150 L0,150 Z" fill="url(#chartGradient)"/>
+                                            <path class="chart-stroke" d="M0,120 Q30,100 60,90 T120,70 T180,50 T240,60 T300,30" fill="none" stroke="var(--primary)" stroke-width="3"/>
+                                        </svg>
+                                    </div>
+                                    <div class="signal-indicator">
+                                        <div class="signal buy">
+                                            <span class="signal-icon">BUY</span>
+                                            <span class="signal-text">Entry Signal Detected</span>
+                                        </div>
+                                    </div>
+                                    <div class="app-indicators">
+                                        <div class="indicator">
+                                            <span class="indicator-label">RSI</span>
+                                            <span class="indicator-value">58.4</span>
+                                        </div>
+                                        <div class="indicator">
+                                            <span class="indicator-label">MACD</span>
+                                            <span class="indicator-value positive">Bullish</span>
+                                        </div>
+                                        <div class="indicator">
+                                            <span class="indicator-label">Volume</span>
+                                            <span class="indicator-value">12.5M</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="countdown-item">
-                                <span class="countdown-value" id="hours">00</span>
-                                <span class="countdown-label">Jam</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-1">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2">
+                            <polyline points="22,7 13.5,15.5 8.5,10.5 2,17"/>
+                            <polyline points="16,7 22,7 22,13"/>
+                        </svg>
+                        <div>
+                            <span class="card-title">Profit +24.5%</span>
+                            <span class="card-subtitle">Bulan ini</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22,4 12,14.01 9,11.01"/>
+                        </svg>
+                        <div>
+                            <span class="card-title">87% Akurasi</span>
+                            <span class="card-subtitle">Sinyal trading</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg"></div>
+    </section>
+
+    <!-- Trusted By -->
+    <section class="trusted-section">
+        <div class="container">
+            <p class="trusted-text">Dipercaya oleh trader dari berbagai kalangan</p>
+            <div class="trusted-logos">
+                <div class="logo-item">Investor Retail</div>
+                <div class="logo-item">Day Trader</div>
+                <div class="logo-item">Swing Trader</div>
+                <div class="logo-item">Fund Manager</div>
+                <div class="logo-item">Financial Planner</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Fitur Unggulan</span>
+                <h2 class="section-title">Semua yang Anda Butuhkan untuk Trading Sukses</h2>
+                <p class="section-description">
+                    Profit Trader dilengkapi dengan tools dan indikator yang telah diuji selama 15+ tahun oleh trader profesional.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 20V10"/>
+                            <path d="M18 20V4"/>
+                            <path d="M6 20v-4"/>
+                        </svg>
+                    </div>
+                    <h3>Indikator Presisi Tinggi</h3>
+                    <p>Indikator custom yang dikembangkan dari riset mendalam, memberikan sinyal entry dan exit yang akurat.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                    </div>
+                    <h3>Real-Time Alerts</h3>
+                    <p>Notifikasi instan ketika ada peluang trading. Tidak perlu memantau layar terus-menerus.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 9h18"/>
+                            <path d="M9 21V9"/>
+                        </svg>
+                    </div>
+                    <h3>Portfolio Tracker</h3>
+                    <p>Pantau semua posisi Anda dalam satu dashboard. Lihat profit/loss dan performa secara real-time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3>Multi-Market Support</h3>
+                    <p>Analisis saham Indonesia, US Stock, komoditas, hingga cryptocurrency dalam satu platform.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
+                    </div>
+                    <h3>Trading Academy</h3>
+                    <p>Materi edukasi lengkap dari basic hingga advanced. Belajar langsung dari trader profesional.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Community Access</h3>
+                    <p>Bergabung dengan komunitas trader aktif. Diskusi, sharing ide, dan networking dengan sesama trader.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Cara Kerja</span>
+                <h2 class="section-title">Mulai Trading dalam 3 Langkah Mudah</h2>
+                <p class="section-description">
+                    Tidak perlu pengalaman sebelumnya. Profit Trader dirancang untuk semua level trader.
+                </p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Download & Setup</h3>
+                        <p>Install Profit Trader dan hubungkan dengan akun TradingView Anda. Setup hanya butuh 2 menit.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7,10 12,15 17,10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Pilih Saham & Analisis</h3>
+                        <p>Gunakan scanner untuk menemukan saham potensial. Indikator akan memberikan analisis otomatis.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21l-4.35-4.35"/>
+                                <path d="M11 8v6"/>
+                                <path d="M8 11h6"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Execute & Profit</h3>
+                        <p>Ikuti trading plan yang sudah jelas: entry point, target profit, dan stop loss. Tinggal eksekusi!</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22,4 12,14.01 9,11.01"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="screenshots" id="screenshots">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Preview Aplikasi</span>
+                <h2 class="section-title">Interface yang Intuitif & Powerful</h2>
+                <p class="section-description">
+                    Desain yang bersih dengan informasi yang lengkap. Semua yang Anda butuhkan, tepat di ujung jari.
+                </p>
+            </div>
+            <div class="screenshots-showcase">
+                <div class="screenshot-item active" data-index="0">
+                    <div class="screenshot-frame">
+                        <div class="screenshot-content">
+                            <div class="screen-header">
+                                <div class="screen-tabs">
+                                    <span class="tab active">Chart</span>
+                                    <span class="tab">Scanner</span>
+                                    <span class="tab">Watchlist</span>
+                                </div>
                             </div>
-                            <div class="countdown-item">
-                                <span class="countdown-value" id="minutes">00</span>
-                                <span class="countdown-label">Menit</span>
+                            <div class="screen-body">
+                                <div class="chart-display">
+                                    <div class="chart-header-row">
+                                        <div class="stock-info">
+                                            <span class="stock-symbol">BBRI</span>
+                                            <span class="stock-name">Bank Rakyat Indonesia</span>
+                                        </div>
+                                        <div class="stock-price-info">
+                                            <span class="current-price">Rp 5,425</span>
+                                            <span class="price-change positive">+125 (+2.36%)</span>
+                                        </div>
+                                    </div>
+                                    <div class="chart-visual">
+                                        <svg viewBox="0 0 400 180" preserveAspectRatio="none" class="candlestick-chart">
+                                            <!-- Candlesticks -->
+                                            <g class="candles">
+                                                <rect x="20" y="100" width="8" height="40" fill="var(--danger)" rx="1"/>
+                                                <line x1="24" y1="90" x2="24" y2="150" stroke="var(--danger)" stroke-width="1"/>
+
+                                                <rect x="40" y="85" width="8" height="35" fill="var(--success)" rx="1"/>
+                                                <line x1="44" y1="75" x2="44" y2="130" stroke="var(--success)" stroke-width="1"/>
+
+                                                <rect x="60" y="70" width="8" height="30" fill="var(--success)" rx="1"/>
+                                                <line x1="64" y1="60" x2="64" y2="110" stroke="var(--success)" stroke-width="1"/>
+
+                                                <rect x="80" y="80" width="8" height="25" fill="var(--danger)" rx="1"/>
+                                                <line x1="84" y1="70" x2="84" y2="115" stroke="var(--danger)" stroke-width="1"/>
+
+                                                <rect x="100" y="75" width="8" height="30" fill="var(--success)" rx="1"/>
+                                                <line x1="104" y1="65" x2="104" y2="115" stroke="var(--success)" stroke-width="1"/>
+
+                                                <rect x="120" y="60" width="8" height="35" fill="var(--success)" rx="1"/>
+                                                <line x1="124" y1="50" x2="124" y2="105" stroke="var(--success)" stroke-width="1"/>
+
+                                                <rect x="140" y="55" width="8" height="25" fill="var(--success)" rx="1"/>
+                                                <line x1="144" y1="45" x2="144" y2="90" stroke="var(--success)" stroke-width="1"/>
+
+                                                <rect x="160" y="65" width="8" height="30" fill="var(--danger)" rx="1"/>
+                                                <line x1="164" y1="55" x2="164" y2="105" stroke="var(--danger)" stroke-width="1"/>
+
+                                                <rect x="180" y="50" width="8" height="35" fill="var(--success)" rx="1"/>
+                                                <line x1="184" y1="40" x2="184" y2="95" stroke="var(--success)" stroke-width="1"/>
+
+                                                <rect x="200" y="45" width="8" height="30" fill="var(--success)" rx="1"/>
+                                                <line x1="204" y1="35" x2="204" y2="85" stroke="var(--success)" stroke-width="1"/>
+
+                                                <rect x="220" y="40" width="8" height="25" fill="var(--success)" rx="1"/>
+                                                <line x1="224" y1="30" x2="224" y2="75" stroke="var(--success)" stroke-width="1"/>
+
+                                                <rect x="240" y="50" width="8" height="20" fill="var(--danger)" rx="1"/>
+                                                <line x1="244" y1="40" x2="244" y2="80" stroke="var(--danger)" stroke-width="1"/>
+
+                                                <rect x="260" y="35" width="8" height="30" fill="var(--success)" rx="1"/>
+                                                <line x1="264" y1="25" x2="264" y2="75" stroke="var(--success)" stroke-width="1"/>
+
+                                                <rect x="280" y="30" width="8" height="25" fill="var(--success)" rx="1"/>
+                                                <line x1="284" y1="20" x2="284" y2="65" stroke="var(--success)" stroke-width="1"/>
+                                            </g>
+                                            <!-- Moving Average -->
+                                            <path d="M24,110 Q64,85 104,80 T184,55 T264,40 T320,35" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.7"/>
+                                        </svg>
+                                    </div>
+                                    <div class="chart-indicators-row">
+                                        <div class="mini-indicator">
+                                            <span class="ind-name">MA20</span>
+                                            <span class="ind-val">5,380</span>
+                                        </div>
+                                        <div class="mini-indicator">
+                                            <span class="ind-name">RSI</span>
+                                            <span class="ind-val">62.5</span>
+                                        </div>
+                                        <div class="mini-indicator">
+                                            <span class="ind-name">Vol</span>
+                                            <span class="ind-val">85M</span>
+                                        </div>
+                                        <div class="mini-indicator signal-badge">
+                                            <span class="ind-val positive">BULLISH</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="countdown-item">
-                                <span class="countdown-value" id="seconds">00</span>
-                                <span class="countdown-label">Detik</span>
-                            </div>
                         </div>
                     </div>
-
-                    <a href="#register" class="btn btn-primary btn-large">
-                        <i class="fas fa-check-circle"></i> AMBIL AKSES GRATIS SEKARANG
-                        <span class="btn-bonus">BONUS: Modul Profit Trader 14 Hari (EKSKLUSIF!)</span>
-                    </a>
-
-                    <div class="hero-note">
-                        <p><strong>✨ Siap mentransformasi portfolio Anda?</strong> Maksimalkan untung, minimalkan rugi - dimulai hari ini!</p>
-                    </div>
-                </div>
-                <div class="hero-right">
-                    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/jY1uScQMrvjBslWQNnbj/media/655eca1003b826b700f702d7.png" alt="Portfolio Makeover" class="hero-image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Value Proposition -->
-    <section id="value-prop" class="value-prop">
-        <div class="container">
-            <h2 class="section-title">💰 Tingkatkan Profit Portfolio Anda Hingga 300%</h2>
-            <div class="value-content">
-                <p class="lead">Hanya 60 menit per hari... Selama 5 hari ke depan, Rio Rizaldi akan membuktikan kepada Anda bagaimana caranya:</p>
-                <p class="highlight-text">"Merevolusi" portfolio saham Anda menjadi mesin penghasil KEUNTUNGAN KONSISTEN yang tidak tergoyahkan oleh volatilitas pasar...</p>
-                <p>Anda akan menguasai seni memilih saham yang "ringan terbang" dan strategi trading yang adaptif di tengah guncangan pasar tahun 2025 ini.</p>
-                <p class="emphasis">💡 Kunci: Volatilitas bukan musuh - ini adalah PELUANG EMAS untuk profit yang lebih besar dan lebih sering!</p>
-                <p>(Tidak peduli pengalaman Anda sebelumnya - pemula atau trader berpengalaman, metode ini terbukti bekerja di Saham US, Komoditas, dan bahkan Cryptocurrency!)</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Growth Section -->
-    <section id="growth" class="growth-section">
-        <div class="container">
-            <h2 class="section-title-white">🌱 INI ADALAH MUSIM PERTUMBUHAN PORTFOLIO ANDA</h2>
-            <p class="section-subtitle-white">Pelatihan 5 Hari Eksklusif Ini Akan Ajarkan Anda</p>
-            <div class="growth-grid">
-                <div class="growth-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>🎯 Trading Plan Sistematis yang TERBUKTI Profitable</h3>
-                </div>
-                <div class="growth-card">
-                    <i class="fas fa-users"></i>
-                    <h3>👥 Komunitas Eksklusif Pelaku Pasar Modal Sejati</h3>
-                </div>
-                <div class="growth-card">
-                    <i class="fas fa-video"></i>
-                    <h3>📺 5 Sesi LIVE Interaktif Bersama Rio Rizaldi</h3>
-                    <p>27 Oktober 2025 | 20.00-21.00 WIB</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5-Day Curriculum -->
-    <section id="curriculum" class="curriculum">
-        <div class="container">
-            <h2 class="section-title">📚 Materi Eksklusif 5 Hari yang Akan MENGUBAH Cara Anda Trading<br>'Portfolio Makeover For Maximum Profit!'</h2>
-
-            <div class="day-card">
-                <div class="day-header">
-                    <span class="day-number">01</span>
-                    <h3>🪶 Portfolio Ringan Terbang = NAIK TERUS</h3>
-                </div>
-                <div class="day-content">
-                    <p>Rahasia portfolio yang selalu untung: isinya 80% hijau, 0% merah/nyangkut! Hari pertama Anda akan belajar timing EXIT yang sempurna - kapan harus menjual SEBELUM harga berbalik turun.</p>
-                    <ul class="day-highlights">
-                        <li><strong>🔥 Realita Pasar: 70% waktu saham bergerak sideways.</strong> Ini adalah GOLDMINE untuk trading harian yang konsisten menghasilkan. Bukan saham yang bergerak naik, tapi saham yang SERING dijual dengan profit!</li>
-                        <li><strong>⚠️ Perhatian: Saham bisa jatuh -50% sampai -80%!</strong> Tapi untuk yang beli di BOTTOM dengan timing tepat - ini adalah peluang cuan 3-5x lipat yang tidak akan terulang lagi!</li>
-                        <li><strong>🎯 Hukum Rebound: Semakin cepat jatuh = semakin kuat naik kembali!</strong> Beli di titik terendah dengan analisa yang tepat = JACKPOT untuk portfolio Anda</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-header">
-                    <span class="day-number">02</span>
-                    <h3>💎 Profit MAKSIMAL dengan Saham-Saham "BINTANG" Anda</h3>
-                </div>
-                <div class="day-content">
-                    <p>Sudah tahu kan - orang lain selalu jual di saat naik sedikit (rugi besar kemudian), dan tahan saat turun (hopeless...). Di hari ke-2, Anda akan belajar kebalikannya: TAHAN saat naik besar, JUAL cepat saat turun!</p>
-                    <ul class="day-highlights">
-                        <li><strong>🎯 Identifikasi SAHAM IDAMAN untuk ditahan LAMA vs SAHAM SWING untuk dijual CEPAT.</strong> Ini adalah perbedaan antara trader yang untung konsisten vs yang selalu merugi!</li>
-                        <li><strong>🤖 Buang "gut feeling" - Gunakan INDICATOR OBJEKTIF (bukan asal subjektif).</strong> Setiap peserta mendapat Profit Trader Module yang sudah terbukti akurat selama 15+ tahun!</li>
-                        <li><strong>⚡ Buka grafik saham, langsung TAHU strategi yang harus dipakai!</strong> Swing atau trend following? Keputusan tepat dalam 10 detik = potensi untung 10x lebih besar.</li>
-                        <li><strong>🔍 Membaca trend menjadi sangat MUDAH & AKURAT.</strong> Tidak ada lagi kebingungan "arahnya mana sih?" yang sering mengakibatkan kerugian.</li>
-                        <li><strong>💪 Percaya diri meningkat drastis</strong> karena menggunakan sistem yang telah diuji dan terbukti menguntungkan ribuan trader.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-header">
-                    <span class="day-number">03</span>
-                    <h3>🤝 Profit Bareng-Bareng? Ini Cara RAHASIA-nya!</h3>
-                </div>
-                <div class="day-content">
-                    <p>Anda pernah penasaran - bisakah komunitas trader BENAR-BENAR untung bersama, ataukah itu hanya mimpi? Di hari ketiga, semua misteri akan terbuka! Anda akan melihat bagaimana smart money bermain, dan bagaimana Anda bisa berada di pihak PEMENANG!</p>
-                    <div class="day-topics">
-                        <div class="topic">
-                            <h4><i class="fas fa-money-bill-wave"></i> 💰 Taktik Dana Besar & Smart Money</h4>
-                            <p>Ungkap bagaimana akumulator besar dan "smart money" menggerakkan pasar modal Indonesia. Pelajari psikologi mereka, prediksi gerakannya, dan BERGABUNG dengan flow uang mereka!</p>
-                        </div>
-                        <div class="topic">
-                            <h4><i class="fas fa-brain"></i> 🧠 3 Mindset Beracun yang HARUS Dihilangkan</h4>
-                            <p>Ketiga mindset ini sudah tertanam sejak kecil, tapi WAJIB ditinggalkan saat trading. Karena jika tidak, Anda akan terus rugi. Anda akan belajar menghilangkannya di hari ke-3 ini!</p>
-                        </div>
-                        <div class="topic">
-                            <h4><i class="fas fa-tools"></i> 🛠️ Tools Canggih yang UBAH PERMAINAN</h4>
-                            <p>Profit Trader Module (PTM) di TradingView - tools yang sama digunakan oleh fund manager profesional. Anda akan mendapatkan akses eksklusif, gratis selama 14 hari pertama!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-header">
-                    <span class="day-number">04</span>
-                    <h3>🚀 AKSELERASI Portfolio Anda Tumbuh 10x Lebih Cepat!</h3>
-                </div>
-                <div class="day-content">
-                    <p>Kebanyakan orang butuh 5 tahun untuk membangun portfolio "lumayan". Tapi jika Anda tahu LANGKAH TEPAT, bisa selesai dalam 5 BULAN. Hari ke-4 adalah hari paling KRUSIAL untuk mentransformasi portfolio Anda selamanya!</p>
-                    <div class="day-topics">
-                        <div class="topic">
-                            <h4><i class="fas fa-search"></i> 🔍 Cari Saham "EMAS" yang Layak Analisa</h4>
-                            <p>Dari ribuan saham yang ada, hanya 50-an saja yang BENAR-BENAR layak untuk dianalisa. Anda akan belajar filter yang tepat sehingga tidak "main-main" dengan saham yang jelek.</p>
-                        </div>
-                        <div class="topic">
-                            <h4><i class="fas fa-project-diagram"></i> ⚙️ Analisa Saham SISTEMATIS dalam 5 Menit!</h4>
-                            <p>Dengan PTM, analisa yang dulu butuh 1 jam kini bisa selesai dalam 5 menit! Step-by-step yang sangat mudah diikuti bahkan untuk pemula sekalipun.</p>
-                        </div>
-                        <div class="topic">
-                            <h4><i class="fas fa-clipboard-list"></i> 📋 Trading Plan OTOMATIS Terbentuk</h4>
-                            <p>Buka grafik → Analisa → Trading Plan langsung jelas! Entry point, target, stop loss - semuanya terukur dan OBJEKTIF, bukan asal-asalan.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-header">
-                    <span class="day-number">05</span>
-                    <h3>🎬 Stock Picking LIVE & Case Study LANGSUNG!</h3>
-                </div>
-                <div class="day-content">
-                    <p>Hari terakhir adalah PRAKTIK LANGSUNG! Rio akan membuka beberapa saham SECARA LIVE di layar, menganalisanya bersama Anda, dan membuat trading plan untuk 1 minggu ke depan. SAKSIKAN SENDIRI bagaimana kesuksesannya bekerja!</p>
-                    <ul class="day-highlights">
-                        <li>🔍 <strong>Identifikasi Karakter Setiap Saham</strong> - Apakah trending? Sideways? Akan rebound atau terus jatuh?</li>
-                        <li>💡 <strong>Pilih Strategi Terbaik</strong> - Swing? Trend following? Money flow? Biarkan saham yang "berbicara"!</li>
-                        <li>📊 <strong>Analisa dengan PTM</strong> - Dalam hitungan menit, grafik saham sudah memberikan sinyal yang jelas.</li>
-                        <li>📝 <strong>Buat Trading Plan Profesional</strong> - Entry, Target, Stop Loss, Risk-Reward Ratio yang semuanya TERUKUR.</li>
-                        <li>💰 <strong>Money & Risk Management Cerdas</strong> - Berapa posisi yang harus dibuka? Portfolio Anda amankah? Anda akan tahu!</li>
-                    </ul>
-                    <p class="emphasis">🎯 PERTANYAAN MASTER: Bagaimana cara membeli saham DI SAAT MOMENTUM NAIK TERBAIK? Bagaimana strategi bottom fishing yang BENAR-BENAR CUAN? Semua jawaban ada di hari ke-5!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section id="benefits" class="benefits">
-        <div class="container">
-            <h2 class="section-title">🎯 Transformasi Luar Biasa yang Akan Anda Alami!</h2>
-            <div class="benefits-grid">
-                <div class="benefit-column">
-                    <h3 class="benefit-title before">❌ SEBELUM PELATIHAN</h3>
-                    <ul class="benefit-list">
-                        <li><i class="fas fa-times-circle"></i> Kebanjiran info trading tapi TIDAK tahu yang mana benar</li>
-                        <li><i class="fas fa-times-circle"></i> Portfolio arah mana sih? Bingung sampai tidur ga nyenyak</li>
-                        <li><i class="fas fa-times-circle"></i> Keputusan trading berdasarkan "perasaan" - sering MERUGI</li>
-                        <li><i class="fas fa-times-circle"></i> Saham nyangkut terus, portfolio turun tiap tahun 😞</li>
-                    </ul>
-                </div>
-                <div class="benefit-column">
-                    <h3 class="benefit-title after">✅ SETELAH PELATIHAN</h3>
-                    <ul class="benefit-list">
-                        <li><i class="fas fa-check-circle"></i> Tahu PERSIS saham mana yang cocok untuk strategi Anda</li>
-                        <li><i class="fas fa-check-circle"></i> Analisa teknikal SISTEMATIS - tidak ada lagi tebakan</li>
-                        <li><i class="fas fa-check-circle"></i> Trading Plan yang JELAS & PROFITABLE - entry, target, stop loss semuanya terukur</li>
-                        <li><i class="fas fa-check-circle"></i> PERCAYA DIRI 100% - beli dengan tenang, tidur jadi nyenyak 😴</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="transformation-text">
-                <p class="transform-item">📌 Sementara orang lain masih ngikut-ikutan info dari "tetangga", <strong>ANDA sudah membuat keputusan SENDIRI dengan analisa yang objektif</strong>.</p>
-                <p class="transform-item">📌 Sementara orang lain masih BINGUNG "jual atau tahan?", <strong>ANDA sudah TAHU jawabnya SEBELUM PASAR BUKA</strong> - bahkan saat tidur!</p>
-                <p class="transform-item">📌 Sementara orang lain portfolio penuh saham nyangkut, <strong>ANDA TIDAK PUNYA SAHAM NYANGKUT LAGI - 100% HIJAU, 0% MERAH</strong> 💚</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Instructor Section -->
-    <section id="instructor" class="instructor">
-        <div class="container">
-            <div class="instructor-quote">
-                <i class="fas fa-quote-left"></i>
-                <h2>"Investasi terbaik yang bisa Anda buat adalah untuk DIRI SENDIRI"</h2>
-                <p>- Warren Buffet</p>
-            </div>
-
-            <div class="instructor-content">
-                <div class="instructor-image">
-                    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/jY1uScQMrvjBslWQNnbj/media/63b3d0ae408c0bfae703aa79.png" alt="Rio Rizaldi">
-                </div>
-                <div class="instructor-bio">
-                    <h3 class="instructor-label">🎓 Anda Akan Belajar Langsung Dari</h3>
-                    <h2 class="instructor-name">Rio Rizaldi</h2>
-                    <p class="instructor-description">👤 <strong>Professional Equity Trader, Technical Analyst & Menttor Pasar Modal Indonesia</strong> dengan 15+ tahun pengalaman di SEMUA jenis instrumen - dari saham blue chip hingga crypto, dari swing trading hingga long-term investing!</p>
-
-                    <div class="credentials">
-                        <div class="credential-item">
-                            <i class="fas fa-briefcase"></i>
-                            <p><strong>💼 Founder & CEO GaleriSaham</strong> - Platform edukasi trading terbesar di Indonesia (sejak 2009)</p>
-                        </div>
-                        <div class="credential-item">
-                            <i class="fas fa-chart-pie"></i>
-                            <p><strong>📊 Investment Committee Member</strong> - PT Shinhan Asset Management (2021-2022), mengelola ratusan miliar untuk investor institusional</p>
-                        </div>
-                        <div class="credential-item">
-                            <i class="fas fa-certificate"></i>
-                            <p><strong>🏆 Certified Financial Planner</strong> - Sertifikasi resmi sejak 2014, membantu ribuan keluarga Indonesia merencanakan keuangan</p>
-                        </div>
-                        <div class="credential-item">
-                            <i class="fas fa-building"></i>
-                            <p><strong>🏛️ Institutional Stock Broker</strong> - Bekerja di perusahaan sekuritas top Indonesia (2009-2016)</p>
-                        </div>
-                    </div>
-
-                    <p class="instructor-note">✨ <strong>Kenapa belajar dari Rio?</strong> Bukan hanya teori, tapi PRAKTIK LANGSUNG dari seorang yang sudah buktikan profit bertahun-tahun. Apa yang Rio ajarkan, dia sendiri yang lakukan setiap hari. Jangan belajar dari orang yang hanya tahu teori - belajar dari trader SEJATI! 🚀</p>
+                    <p class="screenshot-caption">Chart Analysis dengan indikator terintegrasi</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
+    <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">💬 APA KATA MEREKA YANG SUDAH MERASAKAN?</h2>
-            <p class="section-subtitle">✨ TESTIMONI MEMBER ASLI GALERISAHAM</p>
-
+            <div class="section-header">
+                <span class="section-tag">Testimoni</span>
+                <h2 class="section-title">Apa Kata Mereka</h2>
+                <p class="section-description">
+                    Ribuan trader sudah merasakan manfaat menggunakan Profit Trader.
+                </p>
+            </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">
+                            "Profit Trader mengubah cara saya trading. Indikatornya akurat dan mudah dipahami. Dalam 3 bulan pertama, portfolio saya sudah naik 35%."
+                        </p>
                     </div>
-                    <p class="testimonial-text">"Saya suka sekali mengikuti event GaleriSaham. Di training yang mereka adakan, kita ga hanya belajar metode, tapi juga seluk beluk di pasar, seperti insider, bagaimana akumulasi terjadi, bagaimana proses distribusi, dan banyak hal lain, yang tidak pernah saya dapatkan selama ini sebagai trader retail. Mantab!"</p>
-                    <p class="testimonial-author">Muhammad Suwito</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AS</div>
+                        <div class="author-info">
+                            <span class="author-name">Andi Setiawan</span>
+                            <span class="author-role">Swing Trader</span>
+                        </div>
+                    </div>
                 </div>
-
+                <div class="testimonial-card featured">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">
+                            "Sebagai fund manager, saya butuh tools yang reliable. Profit Trader memberikan analisis yang comprehensive dan membantu tim saya membuat keputusan lebih baik."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DR</div>
+                        <div class="author-info">
+                            <span class="author-name">Diana Rahma</span>
+                            <span class="author-role">Fund Manager</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">
+                            "Dulu saya sering loss karena tidak punya trading plan yang jelas. Sekarang dengan Profit Trader, setiap trade sudah ada entry, target, dan stop loss yang terukur."
+                        </p>
                     </div>
-                    <p class="testimonial-text">"Profit Trader Club sangat membantu saya membuat trading plan. Trade journal yang mereka berikan benar – benar membantu saya mengambil keputusan transaksi. Tidak seperti dulu, asal beli saham, alhasil saham dijual malah naik, saham dibeli malah turun, dan sudah turun disimpan terus. Thanks, mantab!"</p>
-                    <p class="testimonial-author">Andini Taurusia</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">BW</div>
+                        <div class="author-info">
+                            <span class="author-name">Budi Wijaya</span>
+                            <span class="author-role">Day Trader</span>
+                        </div>
                     </div>
-                    <p class="testimonial-text">"Suka sekali. GaleriSaham membawakan semuanya di level yang berbeda dengan lembaga lainnya. Jika kebanyakan orang mengajar basic doang, di GaleriSaham yang disampaikan adalah apa yang mereka kerjakan untuk client – client institusinya. Tidak semua orang punya pengalaman seperti ini."</p>
-                    <p class="testimonial-author">Andra kamadjaya</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What's Included -->
-    <section id="whats-included" class="whats-included">
+    <!-- CTA Section -->
+    <section class="cta-section" id="download">
         <div class="container">
-            <h2 class="section-title">🎁 INILAH YANG ANDA DAPATKAN!</h2>
-            <div class="included-grid">
-                <div class="included-card">
-                    <div class="included-icon">
-                        <i class="fas fa-question-circle"></i>
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2 class="cta-title">Siap Meningkatkan Trading Anda?</h2>
+                    <p class="cta-description">
+                        Download Profit Trader sekarang dan mulai trading dengan lebih percaya diri.
+                        Gratis untuk 14 hari pertama, tanpa kartu kredit.
+                    </p>
+                    <div class="cta-features">
+                        <div class="cta-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
+                            </svg>
+                            <span>14 hari trial gratis</span>
+                        </div>
+                        <div class="cta-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
+                            </svg>
+                            <span>Akses semua fitur premium</span>
+                        </div>
+                        <div class="cta-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
+                            </svg>
+                            <span>Cancel kapan saja</span>
+                        </div>
                     </div>
-                    <h3>🤔 MENGAPA?</h3>
-                    <p>KARENA SEKARANG ADALAH WAKTU EMAS ANDA UNTUK MENGHASILKAN PROFIT MAKSIMAL! Jangan buang lagi kesempatan emas ini!</p>
                 </div>
-                <div class="included-card">
-                    <div class="included-icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3>📅 KAPAN?</h3>
-                    <p>27 - 31 Oktober 2025<br>Pukul 20.00-21.00 WIB SETIAP HARI</p>
-                    <p class="small">(Konsisten, mudah dijadwalkan!)</p>
+                <div class="cta-form-wrapper">
+                    <form class="cta-form" id="downloadForm">
+                        <h3 class="form-title">Daftar Sekarang</h3>
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor WhatsApp</label>
+                            <input type="tel" id="phone" name="phone" placeholder="08xxxxxxxxxx" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            Mulai Trial Gratis
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14"/>
+                                <path d="M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                        <p class="form-note">
+                            Dengan mendaftar, Anda menyetujui <a href="#">Syarat & Ketentuan</a> kami.
+                        </p>
+                    </form>
                 </div>
-                <div class="included-card">
-                    <div class="included-icon">
-                        <i class="fas fa-gift"></i>
-                    </div>
-                    <h3>🎯 APA?</h3>
-                    <p>5 HARI PELATIHAN VIRTUAL 100% GRATIS BERSAMA RIO RIZALDI!</p>
-                </div>
-            </div>
-
-            <div class="price-section">
-                <h2 class="price-title">💰 BIAYA: <span class="price-value">GRATIS TOTAL (0 Rupiah)</span></h2>
-            </div>
-
-            <div class="bonus-section">
-                <h3>🌟 BONUS LUAR BIASA (SENILAI JUTAAN!)</h3>
-                <p>🎁 <strong>Profit Trader Module (PTM)</strong> - Tools analisa profesional yang biasanya dijual senilai jutaan rupiah! Gratis eksklusif untuk peserta selama 14 hari pertama setelah pelatihan!</p>
             </div>
         </div>
-    </section>
-
-    <!-- Free eBook Section -->
-    <section id="ebook" class="ebook-section">
-        <div class="container">
-            <div class="ebook-content">
-                <div class="ebook-image">
-                    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/jY1uScQMrvjBslWQNnbj/media/63b3d4908b212b8f762bb7fe.png" alt="Free E-Book">
-                </div>
-                <div class="ebook-text">
-                    <h2>📚 E-BOOK EKSKLUSIF SENILAI JUTAAN RUPIAH - GRATIS!</h2>
-                    <p>✨ Pendaftar yang bergabung HARI INI akan mendapat e-book RAHASIA yang TIDAK PERNAH dibagikan di mana pun. Berisi strategic insights untuk mempersiapkan diri Anda SEBELUM pelatihan dimulai. Pelajari mindset para trader sukses, dan lihat potensi luar biasa yang menanti Anda!</p>
-                    <a href="#register" class="btn btn-primary btn-large">
-                        <i class="fas fa-book"></i> 🎉 YA! SAYA MAU E-BOOK EKSKLUSIF INI!
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA / Registration Form -->
-    <section id="register" class="register-section">
-        <div class="container">
-            <h2 class="section-title-white">🚀 AMBIL AKSES GRATIS ANDA SEKARANG!</h2>
-            <p class="section-subtitle-white">🎯 Bergabunglah dengan 5-Hari Transformasi Portfolio - GRATIS TOTAL!</p>
-
-            <div class="register-form-container">
-                <form class="register-form" id="registrationForm">
-                    <div class="form-group">
-                        <label for="name">👤 Nama Lengkap Anda</label>
-                        <input type="text" id="name" name="name" placeholder="Cth: Budi Santoso" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">📧 Email (Untuk Akses E-book & Materi)</label>
-                        <input type="email" id="email" name="email" placeholder="Cth: budi@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">💬 Nomor WhatsApp (Untuk Update & Reminder)</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Cth: 08123456789" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-large btn-block">
-                        <i class="fas fa-check-circle"></i> ✅ DAFTAR GRATIS SEKARANG - 0 RUPIAH!
-                    </button>
-                    <p class="form-note">✨ GRATIS PENUH + BONUS E-BOOK + AKSES PTM 14 HARI. Daftar dalam 60 detik!</p>
-                </form>
-            </div>
-        </div>
+        <div class="cta-bg"></div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>🎯 GaleriSaham x ToffeeDev</h3>
-                    <p>🚀 Membangun generasi trader profesional dengan portfolio PROFIT MAKSIMAL & SISTEMATIS</p>
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="8" fill="currentColor"/>
+                            <path d="M8 20L13 15L17 19L24 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 12H24V16" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Profit Trader</span>
+                    </a>
+                    <p class="footer-tagline">
+                        Smart trading untuk investor modern. Analisis powerful, keputusan lebih baik.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Telegram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h4>SOLUTIONS</h4>
-                    <ul>
-                        <li><a href="#">Marketing</a></li>
-                        <li><a href="#">Analytics</a></li>
-                        <li><a href="#">Commerce</a></li>
-                        <li><a href="#">Insights</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>SUPPORT</h4>
-                    <ul>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Guides</a></li>
-                        <li><a href="#">API Status</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>COMPANY</h4>
-                    <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Partners</a></li>
-                    </ul>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Produk</h4>
+                        <ul>
+                            <li><a href="#features">Fitur</a></li>
+                            <li><a href="#">Harga</a></li>
+                            <li><a href="#">Integrasi</a></li>
+                            <li><a href="#">Update</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Tutorial</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Webinar</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">Tentang Kami</a></li>
+                            <li><a href="#">Karir</a></li>
+                            <li><a href="#">Kontak</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2025 GaleriSaham x ToffeeDev - All Rights Reserved</p>
-                <div class="footer-disclaimer">
-                    <p><strong>⚖️ DISCLAIMER PENTING:</strong> Pelatihan ini adalah panduan trading praktis dari GaleriSaham berdasarkan pengalaman profesional. Ini BUKAN saran keuangan atau perintah untuk membeli/jual. Setiap trader bertanggung jawab atas keputusan mereka sendiri. Pasar saham memiliki risiko - profit maupun loss tergantung dari strategi dan manajemen risiko Anda. Selalu konsultasi dengan advisor keuangan profesional sebelum mengambil keputusan investasi besar.</p>
+                <p>&copy; 2025 Profit Trader by GaleriSaham. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
+            </div>
+            <div class="footer-disclaimer">
+                <p>
+                    <strong>Disclaimer:</strong> Trading saham memiliki risiko. Profit Trader adalah tools analisis dan bukan merupakan saran investasi.
+                    Setiap keputusan trading adalah tanggung jawab Anda sendiri. Past performance tidak menjamin future results.
+                </p>
             </div>
         </div>
     </footer>
