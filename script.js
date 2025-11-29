@@ -1,66 +1,71 @@
 // ================================
-// Countdown Timer
+// Profit Trader - Modern Landing Page JavaScript
 // ================================
 
-// Set the event date: October 27, 2025, 20:00 WIB (UTC+7)
-// Converting to UTC: 20:00 WIB = 13:00 UTC
-const eventDate = new Date('2025-10-27T13:00:00Z').getTime();
+(function() {
+    'use strict';
 
-function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
+    // ================================
+    // DOM Elements
+    // ================================
+    const navbar = document.getElementById('navbar');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const downloadForm = document.getElementById('downloadForm');
 
-    // Calculate time units
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // Update DOM elements
-    const daysElement = document.getElementById('days');
-    const hoursElement = document.getElementById('hours');
-    const minutesElement = document.getElementById('minutes');
-    const secondsElement = document.getElementById('seconds');
-
-    if (daysElement) daysElement.textContent = String(days).padStart(2, '0');
-    if (hoursElement) hoursElement.textContent = String(hours).padStart(2, '0');
-    if (minutesElement) minutesElement.textContent = String(minutes).padStart(2, '0');
-    if (secondsElement) secondsElement.textContent = String(seconds).padStart(2, '0');
-
-    // If countdown is over
-    if (distance < 0) {
-        if (daysElement) daysElement.textContent = '00';
-        if (hoursElement) hoursElement.textContent = '00';
-        if (minutesElement) minutesElement.textContent = '00';
-        if (secondsElement) secondsElement.textContent = '00';
-
-        const countdownTitle = document.querySelector('.countdown-title');
-        if (countdownTitle) {
-            countdownTitle.textContent = '🎉 PELATIHAN DIMULAI SEKARANG! Selamat datang di transformasi portfolio Anda!';
+    // ================================
+    // Navbar Scroll Effect
+    // ================================
+    function handleNavbarScroll() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
         }
     }
-}
 
-// Update countdown every second
-setInterval(updateCountdown, 1000);
+    window.addEventListener('scroll', handleNavbarScroll, { passive: true });
+    handleNavbarScroll(); // Initial check
 
-// Initialize countdown on page load
-updateCountdown();
+    // ================================
+    // Mobile Menu Toggle
+    // ================================
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
 
+            // Animate hamburger to X
+            const spans = mobileMenuBtn.querySelectorAll('span');
+            if (mobileMenu.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+            } else {
+                spans[0].style.transform = '';
+                spans[1].style.opacity = '';
+                spans[2].style.transform = '';
+            }
+        });
 
-// ================================
-// Smooth Scroll for Navigation
-// ================================
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                const spans = mobileMenuBtn.querySelectorAll('span');
+                spans[0].style.transform = '';
+                spans[1].style.opacity = '';
+                spans[2].style.transform = '';
+            });
+        });
+    }
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Handle smooth scroll for anchor links
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-
-    anchorLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+    // ================================
+    // Smooth Scroll for Anchor Links
+    // ================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
 
-            // Skip if it's just "#"
             if (href === '#') {
                 e.preventDefault();
                 return;
@@ -71,14 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (target) {
                 e.preventDefault();
 
-                // Get the top navigation height for offset
-                const nav = document.querySelector('.top-nav');
-                const navHeight = nav ? nav.offsetHeight : 0;
+                const navHeight = navbar ? navbar.offsetHeight : 0;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
 
-                // Calculate position
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-
-                // Smooth scroll
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -86,162 +86,339 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
 
-
-// ================================
-// Form Handling
-// ================================
-
-document.addEventListener('DOMContentLoaded', function() {
-    const registrationForm = document.getElementById('registrationForm');
-
-    if (registrationForm) {
-        registrationForm.addEventListener('submit', function(e) {
+    // ================================
+    // Form Handling
+    // ================================
+    if (downloadForm) {
+        downloadForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Get form data
             const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim()
             };
 
-            // Basic validation
+            // Validation
             if (!formData.name || !formData.email || !formData.phone) {
-                alert('⚠️ Oops! Mohon isi SEMUA field yang ada:\n- Nama Lengkap\n- Email\n- Nomor WhatsApp\n\nJangan sampai ketinggalan akses eksklusif Anda!');
+                showNotification('Mohon lengkapi semua field yang diperlukan.', 'error');
                 return;
             }
 
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(formData.email)) {
-                alert('❌ Email tidak valid!\n\nMohon masukkan email yang benar (cth: nama@email.com)\n\nEmail ini digunakan untuk mengirimkan akses e-book dan materi eksklusif!');
+                showNotification('Mohon masukkan alamat email yang valid.', 'error');
                 return;
             }
 
-            // Phone validation (basic Indonesian phone number)
+            // Phone validation (Indonesian format)
             const phoneRegex = /^(\+62|62|0)[0-9]{9,12}$/;
-            if (!phoneRegex.test(formData.phone.replace(/\s/g, ''))) {
-                alert('📱 Nomor WhatsApp tidak valid!\n\nGunakan format:\n- 08xxx (Indonesia)\n- +62xxx\n- 62xxx\n\nNomor ini untuk reminder dan update eksklusif!');
+            const cleanPhone = formData.phone.replace(/[\s-]/g, '');
+            if (!phoneRegex.test(cleanPhone)) {
+                showNotification('Mohon masukkan nomor WhatsApp yang valid.', 'error');
                 return;
             }
 
-            // Here you would normally send the data to a server
-            // For now, we'll just show a success message
-            console.log('Form submitted:', formData);
+            // Simulate form submission
+            const submitBtn = downloadForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="loading"></span> Memproses...';
+            submitBtn.disabled = true;
 
-            // Show success message
-            alert('🎉 SELAMAT! Pendaftaran Anda BERHASIL!\n\n✅ Akses eksklusif telah aktif\n✅ E-book akan dikirim ke email Anda\n✅ Reminder pelatihan akan dikirim via WhatsApp\n\n👉 Tandai kalender: 27-31 Oktober 2025, Pukul 20.00 WIB\n\nTerima kasih telah memilih untuk mentransformasi portfolio Anda bersama Rio Rizaldi!\n\n🚀 Mari kita tingkatkan profit portfolio Anda!');
+            // Simulate API call
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
 
-            // Reset form
-            registrationForm.reset();
-
-            // Scroll to top
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+                showNotification('Pendaftaran berhasil! Cek email Anda untuk langkah selanjutnya.', 'success');
+                downloadForm.reset();
+            }, 1500);
         });
     }
-});
 
-
-// ================================
-// Scroll Animations
-// ================================
-
-// Add fade-in animation when elements come into view
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+    // ================================
+    // Notification System
+    // ================================
+    function showNotification(message, type = 'info') {
+        // Remove existing notifications
+        const existingNotification = document.querySelector('.notification');
+        if (existingNotification) {
+            existingNotification.remove();
         }
-    });
-}, observerOptions);
 
-// Apply to elements when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    const animateElements = document.querySelectorAll('.day-card, .testimonial-card, .growth-card, .included-card, .benefit-column');
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            <span>${message}</span>
+            <button class="notification-close">&times;</button>
+        `;
+
+        // Add styles
+        notification.style.cssText = `
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            padding: 16px 24px;
+            background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            max-width: 400px;
+            animation: slideIn 0.3s ease;
+        `;
+
+        const closeBtn = notification.querySelector('.notification-close');
+        closeBtn.style.cssText = `
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+            opacity: 0.8;
+        `;
+
+        closeBtn.addEventListener('click', () => {
+            notification.style.animation = 'slideOut 0.3s ease forwards';
+            setTimeout(() => notification.remove(), 300);
+        });
+
+        document.body.appendChild(notification);
+
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+            if (notification.parentElement) {
+                notification.style.animation = 'slideOut 0.3s ease forwards';
+                setTimeout(() => notification.remove(), 300);
+            }
+        }, 5000);
+    }
+
+    // Add notification animations
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // ================================
+    // Scroll Animations (Intersection Observer)
+    // ================================
+    const animateElements = document.querySelectorAll(
+        '.feature-card, .step, .testimonial-card, .screenshot-item'
+    );
+
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Add staggered delay based on index
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
+
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
 
     animateElements.forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
         observer.observe(el);
     });
-});
 
+    // ================================
+    // Chart Animation in Hero
+    // ================================
+    const chartStroke = document.querySelector('.chart-stroke');
+    if (chartStroke) {
+        const length = chartStroke.getTotalLength ? chartStroke.getTotalLength() : 500;
+        chartStroke.style.strokeDasharray = length;
+        chartStroke.style.strokeDashoffset = length;
 
-// ================================
-// Sticky Navigation
-// ================================
-
-window.addEventListener('scroll', function() {
-    const nav = document.querySelector('.top-nav');
-    if (window.scrollY > 100) {
-        nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
-    } else {
-        nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-    }
-});
-
-
-// ================================
-// Mobile Menu Toggle (if needed in future)
-// ================================
-
-// This can be extended if you want to add a hamburger menu for mobile
-function initMobileMenu() {
-    // Placeholder for future mobile menu functionality
-    const screenWidth = window.innerWidth;
-
-    if (screenWidth <= 768) {
-        console.log('Mobile view');
-        // Add mobile-specific behaviors here
-    }
-}
-
-window.addEventListener('resize', initMobileMenu);
-initMobileMenu();
-
-
-// ================================
-// WhatsApp Link Helper
-// ================================
-
-// Format phone number for WhatsApp links
-function formatWhatsAppLink(phoneNumber) {
-    // Remove all non-numeric characters
-    const cleaned = phoneNumber.replace(/\D/g, '');
-
-    // If starts with 0, replace with 62 (Indonesia country code)
-    if (cleaned.startsWith('0')) {
-        return '62' + cleaned.substring(1);
+        setTimeout(() => {
+            chartStroke.style.transition = 'stroke-dashoffset 2s ease-out';
+            chartStroke.style.strokeDashoffset = '0';
+        }, 500);
     }
 
-    // If doesn't start with country code, add it
-    if (!cleaned.startsWith('62')) {
-        return '62' + cleaned;
+    // ================================
+    // Counter Animation for Stats
+    // ================================
+    function animateCounter(element, target, suffix = '') {
+        const duration = 2000;
+        const start = 0;
+        const startTime = performance.now();
+
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // Ease out cubic
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(start + (target - start) * easeOut);
+
+            element.textContent = current + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                element.textContent = target + suffix;
+            }
+        }
+
+        requestAnimationFrame(update);
     }
 
-    return cleaned;
-}
+    // Animate stats when they come into view
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statValues = entry.target.querySelectorAll('.stat-value');
+                statValues.forEach(stat => {
+                    const text = stat.textContent;
+                    if (text.includes('K')) {
+                        animateCounter(stat, parseInt(text), 'K+');
+                    } else if (text.includes('+')) {
+                        animateCounter(stat, parseInt(text), '+');
+                    } else if (text.includes('.')) {
+                        // For ratings like 4.8
+                        stat.textContent = text;
+                    }
+                });
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
 
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) {
+        statsObserver.observe(heroStats);
+    }
 
-// ================================
-// Console Welcome Message
-// ================================
+    // ================================
+    // Parallax Effect for Floating Cards
+    // ================================
+    const floatingCards = document.querySelectorAll('.floating-card');
 
-console.log('%c🎯 PORTFOLIO MAKEOVER CHALLENGE 2025 - RIO RIZALDI', 'color: #ff6b35; font-size: 18px; font-weight: bold;');
-console.log('%c✨ Transformasi Portfolio Anda dari MERAH Jadi UNTUNG MAKSIMAL!', 'color: #7be054; font-size: 14px; font-weight: bold;');
-console.log('%c📅 27-31 Oktober 2025 | Pukul 20:00-21:00 WIB SETIAP HARI', 'color: #2ea3f2; font-size: 12px;');
-console.log('%c🎁 BONUS: E-Book Eksklusif + Akses PTM 14 Hari GRATIS!', 'color: #ffd60a; font-size: 12px; font-weight: bold;');
-console.log('%c💰 HARGA: 100% GRATIS TOTAL (Rp0)', 'color: #06d6a0; font-size: 13px; font-weight: bold;');
-console.log('%c👉 Daftar sekarang: Scroll ke bawah dan isi form registrasi', 'color: #2d2d2d; font-size: 11px;');
+    if (floatingCards.length && window.innerWidth > 768) {
+        window.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth - 0.5;
+            const mouseY = e.clientY / window.innerHeight - 0.5;
+
+            floatingCards.forEach((card, index) => {
+                const speed = (index + 1) * 20;
+                const x = mouseX * speed;
+                const y = mouseY * speed;
+
+                card.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        }, { passive: true });
+    }
+
+    // ================================
+    // Preload Images
+    // ================================
+    function preloadCriticalImages() {
+        const criticalImages = [
+            // Add critical image URLs here if needed
+        ];
+
+        criticalImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    }
+
+    preloadCriticalImages();
+
+    // ================================
+    // Performance: Debounce & Throttle Utilities
+    // ================================
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    function throttle(func, limit) {
+        let inThrottle;
+        return function(...args) {
+            if (!inThrottle) {
+                func.apply(this, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    }
+
+    // ================================
+    // Console Welcome Message
+    // ================================
+    console.log(
+        '%cProfit Trader',
+        'color: #10b981; font-size: 24px; font-weight: bold;'
+    );
+    console.log(
+        '%cSmart Trading untuk Investor Modern',
+        'color: #6b7280; font-size: 14px;'
+    );
+    console.log(
+        '%cInterested in joining our team? Visit our careers page!',
+        'color: #3b82f6; font-size: 12px;'
+    );
+
+})();
